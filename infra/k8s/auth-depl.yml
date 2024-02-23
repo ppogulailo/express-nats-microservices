@@ -5,8 +5,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-      matchLabels:
-        app: auth
+    matchLabels:
+      app: auth
   template:
     metadata:
       labels:
@@ -15,6 +15,12 @@ spec:
       containers:
         - name: auth
           image: pogungun/auth
+          env:
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
 ---
 apiVersion: v1
 kind: Service
@@ -22,7 +28,7 @@ metadata:
   name: auth-srv
 spec:
   selector:
-      app: auth
+    app: auth
   ports:
     - name: auth
       protocol: TCP
