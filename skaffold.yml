@@ -14,5 +14,21 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: pogungun/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
+    - image: pogungun/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
           - src: 'src/**/*.ts'
             dest: .
