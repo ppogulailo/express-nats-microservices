@@ -1,10 +1,9 @@
 import express, {Request, Response} from "express";
 import {body} from "express-validator";
 import {User} from "../models/user";
-import {BadRequestError} from "../errors/badrequest-error";
 import jwt from "jsonwebtoken";
 import {Password} from "../service/password";
-import {validateRequest} from "../middlewares/validate-request";
+import {validateRequest, BadRequestError} from "@pogmicro/common";
 
 const router = express.Router();
 
