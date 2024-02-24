@@ -15,14 +15,14 @@ app.set('trust proxy', true)
 
 
 app.use(json());
-app.use(cookieSession({signed: false, secure: true}))
+app.use(cookieSession({signed: false, secure: process.env.NODE_ENV !== 'test'}))
 
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.all('*', async (req, res, next) => {
+app.all('*', async () => {
     throw new NotFoundError()
 })
 app.use(errorHandler)
