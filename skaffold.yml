@@ -8,8 +8,24 @@ build:
   local:
     push: false
   artifacts:
-    - image: pogungun/auth
+    - image: rallycoding/auth
       context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: rallycoding/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
+    - image: rallycoding/tickets
+      context: tickets
       docker:
         dockerfile: Dockerfile
       sync:
