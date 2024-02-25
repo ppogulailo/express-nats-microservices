@@ -17,7 +17,7 @@ spec:
           image: pogungun/auth
           env:
             - name: MONGO_URI
-              value: 'mongodb://auth-mongo-srv:27017/'
+              value: 'mongodb://auth-mongo-srv:27017'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
