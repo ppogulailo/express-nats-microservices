@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --no-cahce",
-    "start": "ts-node-dev --poll src/index.ts"
+    "start": "ts-node-dev --poll src/index.ts",
+    "test": "jest --watchAll --no-cache"
   },
   "jest": {
     "preset": "ts-jest",
@@ -18,26 +18,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@pogmicro/common": "^1.0.3",
-    "@types/cookie-session": "^2.0.48",
-    "@types/express": "^4.17.21",
-    "@types/jsonwebtoken": "^9.0.5",
-    "@types/mongoose": "^5.11.97",
-    "cookie-session": "^2.1.0",
+    "@rallycoding/common": "^1.0.4",
+    "@types/cookie-session": "^2.0.44",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "cookie-session": "^2.0.0",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "express-validator": "^7.0.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.1.0",
+    "node-nats-streaming": "^0.3.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "@types/supertest": "^6.0.2",
-    "jest": "^29.7.0",
-    "mongodb-memory-server": "^9.1.6",
-    "supertest": "^6.3.4",
-    "ts-jest": "^29.1.2"
+    "@types/jest": "^29.5.1",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.5.0",
+    "mongodb-memory-server": "^8.12.2",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0"
   }
 }
