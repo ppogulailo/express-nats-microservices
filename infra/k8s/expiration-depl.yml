@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: expiration
-          image: pogungun/expiration
+          image: rallycoding/expiration
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
