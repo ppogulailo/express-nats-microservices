@@ -8,9 +8,9 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
     queueGroupName = queueGroupName
 
     async onMessage(data: TicketCreatedEvent['data'], msg: Message) {
-        const {title, price} = data
+        const {id, title, price} = data
         const ticket = Ticket.build({
-            title, price
+            title, price, id
         })
         await ticket.save()
 
