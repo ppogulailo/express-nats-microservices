@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 import {app} from './app';
 import {natsWrapper} from './nats-wrapper';
-import {OrderCreatedListener} from './events/listeners/order-created-listener';
-import {OrderCancelledListener} from './events/listeners/order-cancelled-listener';
+import {OrderCreatedListener} from './events/listeners/order-created-listeners';
+import {OrderCancelledListener} from './events/listeners/order-cancelled-listeners';
 
 const start = async () => {
     if (!process.env.JWT_KEY) {
