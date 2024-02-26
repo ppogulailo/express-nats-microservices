@@ -14,7 +14,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: "src/**/*.ts"
+          - src: 'src/**/*.ts'
             dest: .
     - image: pogungun/ticketing-client
       context: client
@@ -34,6 +34,14 @@ build:
             dest: .
     - image: pogungun/orders
       context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: pogungun/expiration
+      context: expiration
       docker:
         dockerfile: Dockerfile
       sync:
