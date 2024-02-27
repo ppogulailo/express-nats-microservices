@@ -1,12 +1,11 @@
-name: deploy-auth
+name: deploy-expiration
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - 'auth/**'
+      - 'expiration/**'
 
 jobs:
   build:
@@ -17,10 +16,10 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd auth && docker build -t pogungun/auth .
-      - run: docker push pogungun/auth
+      - run: cd expiration && docker build -t pogungun/expiration .
+      - run: docker push pogungun/expiration
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save ticketing
-      - run: kubectl rollout restart deployment auth-depl
+      - run: kubectl rollout restart deployment expiration-depl
