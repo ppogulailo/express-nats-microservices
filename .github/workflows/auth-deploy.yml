@@ -16,8 +16,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd auth && docker build -t rallycoding/auth .
-      - run: docker push rallycoding/auth
+      - run: cd auth && docker build -t pogungun/auth .
+      - run: docker push pogungun/auth
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
