@@ -10,13 +10,6 @@ spec:
     - host: www.stormerify.com
       http:
         paths:
-          - path: /api/payments/?(.*)
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: payments-srv
-                port:
-                  number: 3000
           - path: /api/users/?(.*)
             pathType: ImplementationSpecific
             backend:
