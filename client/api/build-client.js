@@ -5,7 +5,7 @@ export default ({req}) => {
         // We are on the server
 
         return axios.create({
-            baseURL: 'www.stormerify.com',
+            baseURL: 'http://www.stormerify.com/',
             headers: req.headers,
         });
     } else {
