@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'auth/**'
+#    paths:
+#      - 'auth/**'
 
 jobs:
   build:
