@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --no-cahce",
+    "test": "jest --watchAll --no-cahce --detectOpenHandles",
     "test:ci": "jest",
     "start": "ts-node-dev --poll src/index.ts"
   },
