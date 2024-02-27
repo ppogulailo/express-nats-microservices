@@ -1,5 +1,5 @@
-import {Publisher, Subjects, TicketUpdatedEvent} from '@pogmicro/common';
+import { Publisher, Subjects, TicketUpdatedEvent } from '@rallycoding/common';
 
 export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvent> {
-    readonly subject = Subjects.TicketUpdated;
+  subject: Subjects.TicketUpdated = Subjects.TicketUpdated;
 }
