@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'infra/**'
+#    paths:
+#      - 'infra/**'
 
 jobs:
   build:
